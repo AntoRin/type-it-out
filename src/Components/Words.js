@@ -26,7 +26,6 @@ function Words({ wordList, endGame })
     }
 
     useEffect(() => {
-        console.log("in effect");
         if(done) {
             let update = {
                 theWord: words[word.index + 1],
@@ -43,7 +42,7 @@ function Words({ wordList, endGame })
                 theWord: words[word.index + 1],
                 index: word.index + 1
             };
-            console.log(done);
+            // console.log(done);
             if(done) {
                 clearTimeout(x);
                 setWord(update);

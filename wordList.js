@@ -1,8 +1,9 @@
 const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 
-async function getList() {
-    const data = await fetch("https://www.ef.com/wwen/english-resources/english-vocabulary/top-3000-words/",);
+
+async function getData() {
+    const data = await fetch("https://www.ef.com/wwen/english-resources/english-vocabulary/top-3000-words/");
     const parsedData = await data.text();
     let $;
     $ = cheerio.load(parsedData);
@@ -14,13 +15,12 @@ async function getList() {
         let random = Math.floor(Math.random() * 3000);
         wordArr.map((word, index) => {
             index === random && myWords.push(word);
-            return word;
         });
     }
+    // console.log(myWords);
     return myWords;
 }
 
 
-// module.exports = { getList };
-export default getList;
+module.exports = { getData };
 

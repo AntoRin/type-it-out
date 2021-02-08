@@ -3,8 +3,6 @@ import Header from "./Header";
 import Words from "./Words";
 import Defeat from "./Defeat";
 import NewGame from "./NewGame";
-// const data = require("./WordList.js");
-import getList from "./WordList";
 
 function App()
 {
@@ -20,17 +18,14 @@ function App()
     useEffect(() => {
         game.startNewGame && getData();
         async function getData() {
-            // setdata({isLoading: true, randomWords: []});
-            let listOfWords = getList();
-            console.log(listOfWords);
             let temp = [];
             try {
-                for(let i = 0; i < 5; i++) {
-                    let request = await fetch(`https://random-words-api.vercel.app/word`);
-                    let response = await request.json();
-                    temp.push(response[0].word);
-                }
-                console.log(temp);
+               
+                //fetch(`https://random-words-api.vercel.app/word`);
+                
+                let data = await fetch("/data");
+                temp = await data.json();
+                // console.log(temp);
             } catch (err) {
                 console.error(err.message);
             }

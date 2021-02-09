@@ -14,15 +14,13 @@ function App()
         startNewGame: false,
         gameOver: false
     });
+    const [speed, setSpeed] = useState(5000);
 
     useEffect(() => {
         game.startNewGame && getData();
         async function getData() {
             let temp = [];
-            try {
-               
-                //fetch(`https://random-words-api.vercel.app/word`);
-                
+            try {                
                 let data = await fetch("/data");
                 temp = await data.json();
                 // console.log(temp);
@@ -42,14 +40,19 @@ function App()
         setdata({isLoading: true, randomWords: []});
     }
 
+    function changeSpeed(newSpeed) {
+        setSpeed(newSpeed);
+    }
+
     function endGame() {
         setgame({
             startNewGame: false, gameOver: true
         });
     }
 
+
     if(!game.startNewGame && !game.gameOver)
-        return (<NewGame newGame={newGame} />);
+        return (<NewGame changeSpeed={changeSpeed} newGame={newGame} />);
 
     if(data.isLoading)
         return (<div className="flex-center flex-column"><h1>Loading...</h1></div>);
@@ -57,9 +60,9 @@ function App()
     return game.gameOver === false ? (
         <div>
             <Header title="Type!" />
-            <Words wordList={data.randomWords} endGame={endGame} />
+            <Words speed={speed} wordList={data.randomWords} endGame={endGame} />
         </div>
-    ) : <Defeat newGame={newGame} />;
+    ) : <Defeat changeSpeed={changeSpeed} newGame={newGame} />;
 }
 
 export default App;

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Word from "./Word";
 import Type from "./Type";
 
-function Words({ wordList, endGame })
+function Words({ wordList, endGame, speed })
 {
     let words = wordList;
 
@@ -52,11 +52,11 @@ function Words({ wordList, endGame })
             if(!status)
                 endGame();
             return (setWord(update));
-        }, 5000);
+        }, speed);
 
         
         return () => clearTimeout(x);
-    }, [done, words, word.index, status, endGame]);
+    }, [done, words, word.index, status, endGame, speed]);
 
 
 

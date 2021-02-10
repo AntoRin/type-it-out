@@ -55,7 +55,8 @@ function App()
         return (<NewGame changeSpeed={changeSpeed} newGame={newGame} />);
 
     if(data.isLoading)
-        return (<div className="flex-center flex-column"><h1>Loading...</h1></div>);
+        return (<div className="flex-center flex-column"><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>)
+        // return (<div className="flex-center flex-column"><h1>Loading...</h1></div>);
 
     return game.gameOver === false ? (
         <div>

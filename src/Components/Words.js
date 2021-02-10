@@ -62,7 +62,7 @@ function Words({ wordList, endGame, speed })
 
     return(
         <div>
-            <Type setStatus={setStatus} isDone={isDone}  word={word.theWord} />
+            <Type speed={speed} setStatus={setStatus} isDone={isDone}  word={word.theWord} />
             <Word word={word.theWord} />
         </div>
     )

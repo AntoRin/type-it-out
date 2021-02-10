@@ -1,10 +1,16 @@
 import { useState } from "react";
 import Score from "./Score";
+import Timer from "./Timer";
 
-function Type({ word, setStatus, isDone, })
+function Type({ word, setStatus, isDone, speed })
 {
     const [typedWord, settypedWord] = useState("");
     const [score, setScore] = useState(0);
+    const [completed, setCompleted] = useState(false);
+
+    function changeCompletedStatus() {
+        setCompleted(false);
+    }
 
     function storeInput(event)
     {
@@ -14,6 +20,7 @@ function Type({ word, setStatus, isDone, })
             setStatus();
             setScore(score + 1);
             settypedWord("");
+            setCompleted(true);
         }
     }
 
@@ -21,6 +28,7 @@ function Type({ word, setStatus, isDone, })
         <div>
             <input type="text" value={typedWord} onChange={storeInput} />
             <Score score={score} />
+            <Timer speed={speed} completed={completed} changeCompletedStatus={changeCompletedStatus} />
         </div>
     )
 }

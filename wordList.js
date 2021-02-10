@@ -7,6 +7,7 @@ async function getData() {
     let webContent;
     if(cache) {
         webContent = cache;
+        console.log("using cached data...");
     }
     else {
         try {

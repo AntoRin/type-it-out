@@ -60,7 +60,6 @@ function App()
 
     return game.gameOver === false ? (
         <div>
-            <Header title="Type!" />
             <Words speed={speed} wordList={data.randomWords} endGame={endGame} />
         </div>
     ) : <Defeat changeSpeed={changeSpeed} newGame={newGame} />;

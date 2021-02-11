@@ -25,10 +25,12 @@ function Type({ word, setStatus, isDone, speed })
     }
 
     return (
-        <div>
-            <input type="text" value={typedWord} onChange={storeInput} />
-            <Score score={score} />
-            <Timer speed={speed} completed={completed} changeCompletedStatus={changeCompletedStatus} />
+        <div className="hud">
+            <div className="hud-contents">
+                <input type="text" value={typedWord} onChange={storeInput} />
+                <Score score={score} />
+                <Timer speed={speed} completed={completed} changeCompletedStatus={changeCompletedStatus} />
+            </div>
         </div>
     )
 }

@@ -23,7 +23,7 @@ function Timer({ speed, completed, changeCompletedStatus }) {
     }, [time]);
 
     return (
-        <p>{time}</p>
+        <p className="timer">{time}</p>
     )
 }
 

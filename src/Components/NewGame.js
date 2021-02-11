@@ -1,3 +1,5 @@
+import Header from "./Header";
+
 function NewGame({ newGame, changeSpeed }) {
 
     function handleOptions(event) {
@@ -17,20 +19,23 @@ function NewGame({ newGame, changeSpeed }) {
         }
     }
     return (
-        <div className="flex-center flex-column">
-            <button onClick={newGame} className="btn-std" type="button">Start</button>
-            <div className="flex-center">
-                <div className="options">
-                    <input type="radio" name="options" id="Easy" onChange={handleOptions} />
-                    <label className="margin" htmlFor="Easy">Easy</label>
-                </div>
-                <div className="options">
-                    <input type="radio" name="options" id="Medium" onChange={handleOptions} />
-                    <label className="margin" htmlFor="Medium">Medium</label>
-                </div>
-                <div className="options">
-                    <input type="radio" name="options" id="Impossible" onChange={handleOptions} />
-                    <label className="margin" htmlFor="Impossible">Impossible</label>
+        <div>
+        <Header title="Can You Type?" />
+            <div className="flex-center flex-column">
+                <button onClick={newGame} className="btn-std" type="button">Start</button>
+                <div className="flex-center">
+                    <div className="options">
+                        <input type="radio" name="options" id="Easy" onChange={handleOptions} />
+                        <label className="margin" htmlFor="Easy">Easy</label>
+                    </div>
+                    <div className="options">
+                        <input type="radio" name="options" id="Medium" onChange={handleOptions} />
+                        <label className="margin" htmlFor="Medium">Medium</label>
+                    </div>
+                    <div className="options">
+                        <input type="radio" name="options" id="Impossible" onChange={handleOptions} />
+                        <label className="margin" htmlFor="Impossible">Impossible</label>
+                    </div>
                 </div>
             </div>
         </div>

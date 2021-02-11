@@ -6,6 +6,11 @@ body{
     background-color: black;
     color: white;
     min-height: 100vh;
+    overflow: hidden;
+}
+
+#root{
+  overflow: hidden;
 }
 
 .title{
@@ -24,6 +29,12 @@ body{
     height: 100vh;
 }
 
+.page-center{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .btn-std{
     background-color: coral;
     border: 1px solid lightseagreen;
@@ -36,7 +47,30 @@ body{
 
 .word{
     color: yellow;
-    font-size: 1rem;
+    font-size: 1.25rem;
+}
+
+.timer{
+  color: red;
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.hud{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.hud-contents{
+  display: flex;
+  margin: 0 10px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .options{

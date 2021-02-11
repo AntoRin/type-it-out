@@ -1,7 +1,7 @@
 function Word({ word })
 {
-    let distFromLeft = Math.floor(Math.random() * 90);
-    let distFromTop = Math.floor(Math.random() * 90);
+    let distFromLeft = Math.floor(Math.random() * 80);
+    let distFromTop = Math.floor(Math.random() * 80);
     let position = {
         left: `${distFromLeft}%`,
         top: `${distFromTop}%`,

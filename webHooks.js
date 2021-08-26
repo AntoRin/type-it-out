@@ -4,6 +4,7 @@ const router = Router();
 
 router.get("/personal/secret/ms/bot/webhook", (req, res) => {
    console.log(req.body);
+   res.end();
 });
 
 router.post("/personal/secret/ms/drive/webhook", (req, res) => {

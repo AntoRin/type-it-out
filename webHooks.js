@@ -7,8 +7,10 @@ router.get("/personal/secret/ms/bot/webhook", (req, res) => {
 });
 
 router.get("/personal/secret/ms/drive/webhook", (req, res) => {
+   const { validationToken } = req.query;
+   const decodedToken = decodeURIComponent(validationToken);
    console.log(req.body);
-   res.status(200).end();
+   res.send(decodedToken);
 });
 
 module.exports = { webHookRouter: router };

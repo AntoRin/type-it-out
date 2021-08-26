@@ -2,7 +2,8 @@ const { Router } = require("express");
 
 const router = Router();
 
-router.get("/personal/secret/ms/bot/webhook", (req, res) => {
+router.post("/personal/secret/ms/bot/webhook", (req, res) => {
+   console.log(req.url);
    console.log(req.body);
    res.end();
 });

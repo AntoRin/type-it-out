@@ -47,7 +47,7 @@ router.post("/personal/secret/ms/chat/webhook", async (req, res) => {
          {
             key: process.env.PRIVATE_KEY,
          },
-         encryptedData
+         Buffer.from(encryptedData)
       );
 
       console.log("Decrypted Data: ", decryptedData.toString());

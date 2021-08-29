@@ -46,6 +46,8 @@ router.post("/personal/secret/ms/chat/webhook", async (req, res) => {
       const decryptedData = crypto.privateDecrypt(
          {
             key: process.env.PRIVATE_KEY,
+            padding: "crypto.constants.RSA_PKCS1_OAEP_PADDING",
+            oaepHash: "sha256",
          },
          Buffer.from(encryptedData, "base64")
       );
